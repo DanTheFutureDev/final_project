@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>Market Configuration</h2>
+  {% if error_message %}
+  <div class="error">{{ error_message }}</div>
+  {% endif %}
+  <form method="POST">
+    <!-- ...add configuration fields as needed... -->
+    <div class="form-group">
+      <label for="market_status">Market Status:</label>
+      <select id="market_status" name="market_status" class="form-control" required>
+        <option value="open">Open</option>
+        <option value="closed">Closed</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>Market Configuration</h2>
+  <!-- Error message section -->
+  {% if error_message %}
+  <div class="error">{{ error_message }}</div>
+  {% endif %}
+  <form method="POST">
+    <div class="form-group">
+      <label for="market_open">Market Open (HH:MM):</label>
+      <input type="text" id="market_open" name="market_open" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="market_close">Market Close (HH:MM):</label>
+      <input type="text" id="market_close" name="market_close" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="weekdays_only">Weekdays Only:</label>
+      <select id="weekdays_only" name="weekdays_only" class="form-control" required>
+        <option value="True">Yes</option>
+        <option value="False">No</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Market Config</button>
+  </form>
+</div>
+{% endblock %}

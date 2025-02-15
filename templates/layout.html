@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Final Project | Dashboard</title>
+    <title>Stock Trader | Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Optional: Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,7 +15,7 @@
     <header class="main-header">
       <nav class="navbar">
         <div class="brand">
-          <a href="{{ url_for('index') }}">Final Project</a>
+          <a href="{{ url_for('index') }}">Stock Trader</a>
         </div>
         <ul class="nav-items">
           <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
@@ -47,11 +47,14 @@
 
       <!-- Main Content -->
       <div class="content">
+        <!-- Flash message display -->
         {% with messages = get_flashed_messages(with_categories=true) %}
           {% if messages %}
-            {% for category, message in messages %}
-              <div class="alert alert-{{ category }}">{{ message }}</div>
-            {% endfor %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                <p class="flash-{{ category }}">{{ message }}</p>
+              {% endfor %}
+            </div>
           {% endif %}
         {% endwith %}
         {% block content %}{% endblock %}
@@ -60,7 +63,7 @@
 
     <!-- Footer -->
     <footer class="main-footer">
-      <p>&copy; 2025 Final Project. All rights reserved.</p>
+      <p>&copy; 2025 Stock Trader. All rights reserved.</p>
     </footer>
   </body>
 </html>
