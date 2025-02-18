@@ -1,9 +1,26 @@
-.highlight {
-    background-color: yellow;
-    font-weight: bold;
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.main-header, .main-footer {
+    background: #333;
+    color: #fff;
+    padding: 1em;
+}
+.content {
+    padding: 2em;
+}
+/* Flash messages */
+.flash-success {
+    color: green;
+}
+.flash-error, .flash-warning, .error {
+    color: red;
 }
 
-.error {
-    color: red;
+.highlight {
+    background-color: yellow;
     font-weight: bold;
 }
